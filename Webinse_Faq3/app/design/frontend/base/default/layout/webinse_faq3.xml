@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Main layout of module
+ *
+ * @category    Webinse
+ * @package     Webinse_Faq3
+ * @author      Webinse Team <info@webinse.com>
+ * @copyright   2017 Webinse Ltd. (https://www.webinse.com)
+ * @license     http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0
+ */
+-->
+<layout>
+    <faq3_index_getallfaq>
+        <reference name="head">
+            <!--
+                @todo Set page title
+            -->
+        </reference>
+
+        <reference name="content">
+            <!--
+                @todo Remove left and right columns
+            -->
+
+            <!-- @todo: you must set properly type of your block  -->
+            <block type="set_your_block" name="all.faq" as="all.faq" template="webinse_faq3/view.phtml" />
+        </reference>
+    </faq3_index_getallfaq>
+
+    <faq3_index_addnewfaq>
+            <!--
+                @todo Set page title
+                      set template page/2columns-right.phtml
+                      add block that using template webinse_faq3/form.phtml
+                      also you can add your own styles or scripts
+            -->
+    </faq3_index_addnewfaq>
+
+    <faq3_index_editfaq>
+            <!--
+                @todo Set page title
+                      set template page/2columns-left.phtml
+                      add block that using template webinse_faq3/form.phtml
+                      also you can add your own styles or scripts
+            -->
+    </faq3_index_editfaq>
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Main config of module
+ *
+ * @category    Webinse
+ * @package     Webinse_Faq3
+ * @author      Webinse Team <info@webinse.com>
+ * @copyright   2017 Webinse Ltd. (https://www.webinse.com)
+ * @license     http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0
+ */
+-->
+<config>
+    <modules>
+        <Webinse_Faq3>
+            <version>0.1.0</version>
+        </Webinse_Faq3>
+    </modules>
+    <global>
+        <!-- @todo: Here you must define your model and resource model -->
+
+        <!-- Then copy the sql below and import by using PhpMyAdmin -->
+        <!--
+        CREATE TABLE `webinse_faq3` (
+            `entity_id` int(11) NOT NULL auto_increment,
+            `question` text,
+            `answer` text,
+            `date` datetime default NULL,
+            PRIMARY KEY  (`entity_id`)
+        )
+        -->
+
+        <!-- @todo Here you must define your block -->
+
+        <!-- @todo Here you must define your helper -->
+    </global>
+    <frontend>
+        <routers>
+            <faq3>
+                <!-- @todo: Here you must explicitly define a frontend route -->
+            </faq3>
+        </routers>
+        <layout>
+            <!-- @todo Here you must define your layout webinse_faq3.xml -->
+        </layout>
+    </frontend>
+</config>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Main config of module
+ *
+ * @category    Webinse
+ * @package     Webinse_Faq4
+ * @author      Webinse Team <info@webinse.com>
+ * @copyright   2017 Webinse Ltd. (https://www.webinse.com)
+ * @license     http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0
+ */
+-->
+<config>
+    <modules>
+        <Webinse_Faq4>
+            <version>0.1.0</version>
+        </Webinse_Faq4>
+    </modules>
+    <global>
+        <models>
+            <webinse_faq4>
+                <class>Webinse_Faq4_Model</class>
+                <resourceModel>webinse_faq4_resource</resourceModel>
+            </webinse_faq4>
+            <webinse_faq4_resource>
+                <class>Webinse_Faq4_Model_Resource</class>
+                <entities>
+                    <faq>
+                        <table>webinse_faq4</table>
+                    </faq>
+                </entities>
+            </webinse_faq4_resource>
+        </models>
+
+        <!-- @todo: set resources for setup -->
+
+        <blocks>
+            <faq>
+                <class>Webinse_Faq4_Block</class>
+            </faq>
+        </blocks>
+        <helpers>
+            <faq>
+                <class>Webinse_Faq4_Helper</class>
+            </faq>
+        </helpers>
+    </global>
+    <adminhtml>
+        <!-- @todo: set layout (webinse_faq4.xml) for backend -->
+    </adminhtml>
+    <admin>
+        <!-- @todo: define a route for backend -->
+    </admin>
+</config>
