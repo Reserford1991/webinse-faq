@@ -23,24 +23,39 @@
  * @var $this Webinse_Faq3_Block_Faq
  */
 ?>
-<?php $helper = Mage::helper('your_helper_name'); // @todo: you must set properly URI of your helper ?>
-<?php $collection = $this->getAllFaq() ?>
+<?php $helper = Mage::helper('faq3/data'); // (Done)@todo: you must set properly URI of your helper ?>
+<?php $collection = $this->getAllFaq(); ?>
 
 <h1><?php echo $helper->__('Frequently Asked Questions'); ?></h1>
 <?php if ($collection->getSize()): ?>
 
-    <?php
+<?php
     /**
-     * @todo Output all faq near each record you must add link to delete and edit it page (use methods deleteAction and editFaqByIdAction)
-     */
-    ?>
+        * @todo Output all faq near each record you must add link to delete and edit it page (use methods deleteAction and editFaqByIdAction)
+    */ ?>
+    <?php foreach($collection as $item){ ?>
+        <?php $id = $item->getId(); ?>
+        <?php echo '<h2>' . $item->getQuestion(); ?>
+        <?php echo ' <a href="'; ?>
+        <?php echo $this->getUrl('faq3/index/addnewfaq/', array(id=>$id)); ?>
+        <?php echo '">edit</a> '; ?>
+        <?php echo ' <a href="delete/id/' .$item->getId(). '">delete</a>'.'</h2>'; ?>
+        <?php echo '<p>'. $item->getAnswer() . '</p>'; ?>
+        <?php echo '<p>' . $item->getDate() . '</p>'; ?>
+        <?php echo '<hr>'; ?>
+    <?php } ?>
+
 
 <?php endif; ?>
-
 <?php
-/**
- * @todo Add link to 'add new faq' page (use method getUrl)
- */
+    /**
+        * @todo Add link to 'add new faq' page (use method getUrl)
+    */
+    echo '<hr>';
+    echo "<a href='";
+    echo $this->getUrl('faq3/index/addnewfaq/', array(id=>0));
+    echo "'>Add new faq</a>";
 ?>
+
 
 

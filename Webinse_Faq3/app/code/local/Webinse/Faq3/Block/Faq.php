@@ -27,23 +27,29 @@ class Webinse_Faq3_Block_Faq extends Mage_Core_Block_Template
      * 
      * @return Webinse_Faq3_Model_Resource_Faq_Collection
      */
-    public function getAllFaq()
+     public function getAllFaq()
     {
         /**
          * @todo get collection of all faq
          */
+        $collection = array();
+        $collection = Mage::getModel('faq3/faq')->getCollection()
+            ->setOrder('date','desc');
+        return $collection;
     }
-
-    /**
-     * Retrieve faq by id
-     *
-     * @return Webinse_Faq3_Model_Faq
-     */
+        /**
+            * Retrieve faq by id
+            *
+            * @return Webinse_Faq3_Model_Faq
+        */
     public function getFaqById()
     {
-        /**
-         * @todo get params from url and load model
-         */
-    }
-
-}
+            /**
+                * @todo get params from url and load model
+            */
+        $id = $this->getRequest()->getParam('id');
+            $faqObject = Mage::getModel('faq3/faq');
+            $faqObject->load($id);
+        return $faqObject;
+    }  
+}    
