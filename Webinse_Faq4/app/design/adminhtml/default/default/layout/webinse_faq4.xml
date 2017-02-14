@@ -13,7 +13,7 @@
 <layout>
     <adminhtml_faq_index>
         <reference name="content">
-            <block type="webinse_faq/adminhtml_faq" name="faq"></block>
+            <block type="webinse_faq4/adminhtml_faq" name="faq"></block>
         </reference>
     </adminhtml_faq_index>
 </layout>

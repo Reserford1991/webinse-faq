@@ -25,7 +25,7 @@ class Webinse_Faq4_Model_Resource_Faq_Collection extends Mage_Core_Model_Resourc
     protected function _construct()
     {
         // @todo: you must init model defined in the config.xml
-        $this->_init('your_model/entities');
+        $this->_init('faq4/faq');
     }
 
 }
