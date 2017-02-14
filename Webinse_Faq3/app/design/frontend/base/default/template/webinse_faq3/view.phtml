@@ -29,10 +29,10 @@
 <h1><?php echo $helper->__('Frequently Asked Questions'); ?></h1>
 <?php if ($collection->getSize()): ?>
 
-<?php
+    <?php
     /**
-        * @todo Output all faq near each record you must add link to delete and edit it page (use methods deleteAction and editFaqByIdAction)
-    */ ?>
+     * @todo Output all faq near each record you must add link to delete and edit it page (use methods deleteAction and editFaqByIdAction)
+     */ ?>
     <?php foreach($collection as $item){ ?>
         <?php $id = $item->getId(); ?>
         <?php echo '<h2>' . $item->getQuestion(); ?>
@@ -47,15 +47,15 @@
 
 
 <?php endif; ?>
-<?php
-    /**
-        * @todo Add link to 'add new faq' page (use method getUrl)
-    */
-    echo '<hr>';
-    echo "<a href='";
-    echo $this->getUrl('faq3/index/addnewfaq/', array(id=>0));
-    echo "'>Add new faq</a>";
-?>
+
+/**
+* @todo Add link to 'add new faq' page (use method getUrl)
+*/
+<?php echo '<hr>'; ?>
+<?php echo "<a href='"; ?>
+<?php echo $this->getUrl('faq3/index/addnewfaq/', array(id=>0)); ?>
+<?php echo "'>Add new faq</a>"; ?>
+
 
 
 
