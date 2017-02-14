@@ -13,58 +13,36 @@
 <layout>
     <faq3_index_getallfaq>
         <reference name="head">
-            <!-- @todo Set page title -->
-            <action method="setTitle">
-                <title>Faq3 Index GetAllFaq</title>
-            </action>
+            <!--
+                @todo Set page title
+            -->
         </reference>
-        
+
         <reference name="content">
-            <!-- @todo Remove left and right columns -->
-            <remove name="left"/>
-            <remove name="right"/>
-            <!-- @todo: you must set properly type of your block  -->            
-            <block type="faq3/faq" name="all.faq" as="all.faq" template="webinse_faq3/view.phtml" />
-        </reference>     
-    </faq3_index_getallfaq>  
-    
+            <!--
+                @todo Remove left and right columns
+            -->
+
+            <!-- @todo: you must set properly type of your block  -->
+            <block type="set_your_block" name="all.faq" as="all.faq" template="webinse_faq3/view.phtml" />
+        </reference>
+    </faq3_index_getallfaq>
+
     <faq3_index_addnewfaq>
-        <!-- @todo Set page title -->
-        <!-- set template page/2columns-right.phtml -->
-        <!-- add block that -->
-        <!-- using template webinse_faq3/form.phtml -->
-        <!-- also you can add your own styles or scripts -->
-        <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
-        </reference>
-        <reference name="head">
-            <action method="setTitle">
-                <title>Faq3 Index AddNewFaq</title>
-            </action>
-        </reference>
-        <reference name="content">
-            <block type="faq3/faq" name="new.faq" as="new.faq" template="webinse_faq3/form.phtml" />
-        </reference>
-        
+            <!--
+                @todo Set page title
+                      set template page/2columns-right.phtml
+                      add block that using template webinse_faq3/form.phtml
+                      also you can add your own styles or scripts
+            -->
     </faq3_index_addnewfaq>
-    
-    <faq3_index_editfaqbyid>
-        
-        <!-- @todo Set page title -->
-        <!-- set template page/2columns-left.phtml -->
-        <!-- add block that 
-        using template webinse_faq3/form.phtml -->
-        <!-- also you can add your own styles or scripts -->
-        <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
-        </reference>
-        <reference name="head">
-            <action method="setTitle">
-                <title>Faq3 Index EditFaqById</title>
-            </action>
-        </reference>
-        <reference name="content">
-            <block type="faq3/faq" name="edit.faq" as="edit.faq" template="webinse_faq3/form.phtml" />
-        </reference>
-    </faq3_index_editfaqbyid>
+
+    <faq3_index_editfaq>
+            <!--
+                @todo Set page title
+                      set template page/2columns-left.phtml
+                      add block that using template webinse_faq3/form.phtml
+                      also you can add your own styles or scripts
+            -->
+    </faq3_index_editfaq>
 </layout>

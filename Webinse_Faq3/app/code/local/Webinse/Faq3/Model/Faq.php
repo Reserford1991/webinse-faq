@@ -27,7 +27,7 @@ class Webinse_Faq3_Model_Faq extends Mage_Core_Model_Abstract
         parent::_construct();
 
         // @todo: you must init model defined in the config.xml
-        $this->_init('faq3/faq');
+        $this->_init('your_model/entities');
     }
 
 }

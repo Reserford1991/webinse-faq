@@ -17,62 +17,31 @@
         </Webinse_Faq3>
     </modules>
     <global>
-        <models>
-            <!-- @todo: Here you must define your model and resource model -->
-            <faq3>
-                <class>Webinse_Faq3_Model</class>
-                <resourceModel>faq3_resource</resourceModel>
-            </faq3>
-            <faq3_resource>
-                <class>Webinse_Faq3_Model_Resource</class>
-                <entities>
-                    <faq>
-                        <table>webinse_faq3</table>
-                    </faq>
-                </entities>
-            </faq3_resource>
-            <!-- Then copy the sql below and import by using PhpMyAdmin -->
-            <!--
-                CREATE TABLE `webinse_faq3` (
-                `entity_id` int(11) NOT NULL auto_increment,
-                `question` text,
-                `answer` text,
-                `date` datetime default NULL,
-                PRIMARY KEY  (`entity_id`)
-                )
-            -->
-        </models>
+        <!-- @todo: Here you must define your model and resource model -->
+
+        <!-- Then copy the sql below and import by using PhpMyAdmin -->
+        <!--
+        CREATE TABLE `webinse_faq3` (
+            `entity_id` int(11) NOT NULL auto_increment,
+            `question` text,
+            `answer` text,
+            `date` datetime default NULL,
+            PRIMARY KEY  (`entity_id`)
+        )
+        -->
+
         <!-- @todo Here you must define your block -->
-        <blocks>
-            <faq3>
-                <class>Webinse_Faq3_Block</class>
-            </faq3>
-        </blocks>
+
         <!-- @todo Here you must define your helper -->
-        <helpers>
-            <faq3>
-                <class>Webinse_Faq3_Helper</class>
-            </faq3>   
-        </helpers>
     </global>
     <frontend>
-        <!-- @todo: Here you must explicitly define a frontend route -->
         <routers>
             <faq3>
-                <use>standard</use>
-				<args>
-					<module>Webinse_Faq3</module>
-					<frontName>faq3</frontName>
-                </args>
+                <!-- @todo: Here you must explicitly define a frontend route -->
             </faq3>
         </routers>
-        <!-- @todo Here you must define your layout webinse_faq3.xml -->
         <layout>
-            <updates>
-                <faq3>
-                    <file>webinse_faq3.xml</file>
-                </faq3>
-            </updates>
+            <!-- @todo Here you must define your layout webinse_faq3.xml -->
         </layout>
     </frontend>
 </config>
