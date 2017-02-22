@@ -68,6 +68,7 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
         $data = $this->getRequest()->getPost();
         $session= Mage::getSingleton('core/session');
         $faq= Mage::getModel('faq3/faq');
+        $FaqID = $this->getRequest()->getParam('id');    // getting element ID from URL
         if ($id = $this->getRequest()->getParam('id') == 0)
         {
 
@@ -76,7 +77,6 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
         }
         else
         {
-            $FaqID = $this->getRequest()->getParam('id');    // getting element ID from URL
             $faq->load($FaqID);
             $faq->addData($data);
 
