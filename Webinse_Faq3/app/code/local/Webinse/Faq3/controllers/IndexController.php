@@ -69,7 +69,7 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
         $session= Mage::getSingleton('core/session');
         $faq= Mage::getModel('faq3/faq');
         $FaqID = $this->getRequest()->getParam('id');    // getting element ID from URL
-        if ($FaqID)
+        if (!$FaqID)
         {
             $faq->addData($data);
             $faq->setDate(date('Y-m-d H:i:s'));
