@@ -21,12 +21,12 @@
  */
 class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
 {
-   
+
     private function _initLayout()
     {
         $this->loadLayout()->renderLayout();
     }
-        
+
         /**
             * This method is output all questions and answers to them
         **/
@@ -34,7 +34,7 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
     {
         $this->_initLayout();
     }
-        
+
     /**
      * Render form to edit faq
      */
@@ -44,7 +44,7 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
         //$this->_forward('editFaqById');
         $this->_forward('editFaqById');
     }
-        
+
 /**
 * Render form to edit faq
 */
@@ -54,7 +54,7 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
         $this->loadLayout();
         $this->renderLayout();
     }
-        
+
     /**
      * Save faq by using id or add new record
      */
@@ -71,14 +71,7 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
             $session= Mage::getSingleton('core/session');
             $faq= Mage::getModel('faq3/faq');
             $faq->addData($data);
-            $faq->setData('date', date('Y-m-d H:i:s'));
-            try{
-                $faq->save();
-                $session->addSuccess('Add a faq sucessfully');
-            }
-            catch(Exception $e){
-                $session->addError('Add Error');
-            }
+            $faq->setDate(date('Y-m-d H:i:s'));
         }
         else
         {
@@ -89,17 +82,18 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
             $faq->load($FaqID);
             $faq->addData($data);
 			$faq->setDate(date('Y-m-d H:i:s'));
-            try{
-                $faq->save();
-                $session->addSuccess('Add a faq sucessfully');
-            }
-            catch(Exception $e){
-                $session->addError('Add Error');
-            }
+
+        }
+        try{
+            $faq->save();
+            $session->addSuccess('Add a faq sucessfully');
+        }
+        catch(Exception $e){
+            $session->addError('Add Error');
         }
         $this->_redirect('faq3/index/getAllFaq');
     }
-        
+
    /**
      * Delete faq by id
      */
@@ -112,7 +106,7 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
         $id = $this->getRequest()->getParam('id');
         try {
             Mage::getModel('faq3/faq')->setId($id)->delete();
-        } 
+        }
         catch(Exception $e) {
             Mage::getSingleton('core/session')->addError($this->__('Error occurred: %s',$e->getMessage()));
             $this->_redirectReferer();
@@ -121,5 +115,5 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
         $this->_redirect('faq3/index/getAllFaq');
         Mage::getSingleton('core/session')->addSuccess($this->__('Successfully deleted id %s',$id));
     }
-        
+
 }
