@@ -88,7 +88,7 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
             $faq = Mage::getModel('faq3/faq');
             $faq->load($FaqID);
             $faq->addData($data);
-            $faq->setData('date', date('Y-m-d H:i:s'));
+			$faq->setDate(date('Y-m-d H:i:s'));
             try{
                 $faq->save();
                 $session->addSuccess('Add a faq sucessfully');

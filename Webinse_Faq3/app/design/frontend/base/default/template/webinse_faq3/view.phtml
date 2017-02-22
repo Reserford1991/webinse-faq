@@ -33,17 +33,19 @@
     /**
      * @todo Output all faq near each record you must add link to delete and edit it page (use methods deleteAction and editFaqByIdAction)
      */ ?>
-    <?php foreach($collection as $item){ ?>
+    <?php foreach($collection as $item):?>
         <?php $id = $item->getId(); ?>
-        <?php echo '<h2>' . $item->getQuestion(); ?>
-        <?php echo ' <a href="'; ?>
-        <?php echo $this->getUrl('faq3/index/addnewfaq/', array(id=>$id)); ?>
-        <?php echo '">edit</a> '; ?>
-        <?php echo ' <a href="delete/id/' .$item->getId(). '">delete</a>'.'</h2>'; ?>
-        <?php echo '<p>'. $item->getAnswer() . '</p>'; ?>
-        <?php echo '<p>' . $item->getDate() . '</p>'; ?>
-        <?php echo '<hr>'; ?>
-    <?php } ?>
+            <h2>
+            <?php echo $item->getQuestion(); ?>
+            <?php echo ' <a href="'; ?>
+            <?php echo $this->getUrl('faq3/index/addnewfaq/', array(id=>$id)); ?>
+            <?php echo '">edit</a> '; ?>
+            <?php echo ' <a href="delete/id/' .$item->getId(). '">delete</a>'; ?>
+            </h2>
+            <p> <?php echo $item->getAnswer(); ?> </p>
+            <p> <?php echo $item->getDate(); ?>  </p>
+        <hr>
+    <?php endforeach; ?>
 
 
 <?php endif; ?>
