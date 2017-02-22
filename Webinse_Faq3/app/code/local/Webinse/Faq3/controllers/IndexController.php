@@ -65,25 +65,23 @@ class Webinse_Faq3_IndexController extends Mage_Core_Controller_Front_Action
          *      if id exist in post, you can load model by using it otherwise create new record
          *      add message about successful saving or editing by using session (see models such as Mage_Core_Model_Session and extended classes)
          */
+        $data = $this->getRequest()->getPost();
+        $session= Mage::getSingleton('core/session');
+        $faq= Mage::getModel('faq3/faq');
         if ($id = $this->getRequest()->getParam('id') == 0)
         {
-            $data = $this->getRequest()->getPost();
-            $session= Mage::getSingleton('core/session');
-            $faq= Mage::getModel('faq3/faq');
+
             $faq->addData($data);
             $faq->setDate(date('Y-m-d H:i:s'));
         }
         else
         {
-            $data = $this->getRequest()->getPost();
-            $session= Mage::getSingleton('core/session');
             $FaqID = $this->getRequest()->getParam('id');    // getting element ID from URL
-            $faq = Mage::getModel('faq3/faq');
             $faq->load($FaqID);
             $faq->addData($data);
-			$faq->setDate(date('Y-m-d H:i:s'));
 
         }
+        $faq->setDate(date('Y-m-d H:i:s'));
         try{
             $faq->save();
             $session->addSuccess('Add a faq sucessfully');
