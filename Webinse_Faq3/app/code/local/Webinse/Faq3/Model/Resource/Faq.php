@@ -28,7 +28,7 @@ class Webinse_Faq3_Model_Resource_Faq extends Mage_Core_Model_Resource_Db_Abstra
     protected function _construct()
     {
         // @todo: you must init model defined in the config.xml
-        $this->_init('your_model/entities', 'entity_id');
+        $this->_init('faq3/faq', 'entity_id');
     }
 
 }

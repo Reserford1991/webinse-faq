@@ -23,8 +23,8 @@
  * @var $this Webinse_Faq3_Block_Faq
  */
 ?>
-<?php $helper = Mage::helper('your_helper_name'); // @todo: you must set properly URI of your helper ?>
-<?php $collection = $this->getAllFaq() ?>
+<?php $helper = Mage::helper('faq3/data'); // (Done)@todo: you must set properly URI of your helper ?>
+<?php $collection = $this->getAllFaq(); ?>
 
 <h1><?php echo $helper->__('Frequently Asked Questions'); ?></h1>
 <?php if ($collection->getSize()): ?>
@@ -32,8 +32,19 @@
     <?php
     /**
      * @todo Output all faq near each record you must add link to delete and edit it page (use methods deleteAction and editFaqByIdAction)
-     */
-    ?>
+     */ ?>
+    <?php foreach($collection as $item):?>
+        <?php $id = $item->getId(); ?>
+        <h2>
+            <?php echo $item->getQuestion(); ?>
+            <a href="<?php echo $this->getUrl('faq3/index/addnewfaq/', array(id=>$id)); ?>"><?php echo $this->__('edit'); ?></a>
+            <?php echo ' <a href="delete/id/' .$item->getId(). '">delete</a>'; ?>
+        </h2>
+        <p> <?php echo $item->getAnswer(); ?> </p>
+        <p> <?php echo $item->getDate(); ?>  </p>
+        <hr>
+    <?php endforeach; ?>
+
 
 <?php endif; ?>
 
@@ -42,5 +53,12 @@
  * @todo Add link to 'add new faq' page (use method getUrl)
  */
 ?>
+
+<hr>
+<?php echo "<a href='"; ?>
+<?php echo $this->getUrl('faq3/index/addnewfaq/', array(id=>0)); ?>
+<?php echo "'>Add new faq</a>"; ?>
+
+
 
 
