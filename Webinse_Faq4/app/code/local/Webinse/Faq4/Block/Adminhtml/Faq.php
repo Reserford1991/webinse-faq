@@ -32,13 +32,16 @@ class Webinse_Faq4_Block_Adminhtml_Faq extends Mage_Adminhtml_Block_Widget_Grid_
         /**
          * this is path to grid block
          */
+
         $this->_controller = 'adminhtml_faq';
 
         /**
          * @todo modify header & button labels by using using helper
          */
-        $this->_headerText     = '';
-        $this->_addButtonLabel = '';
+        $this->_addButtonLabel = Mage::helper('webinse_faq4')->__('Add New Faq');
+        $this->_blockGroup = 'webinse_faq4';
+        $this->_headerText = Mage::helper('webinse_faq4')->__('Faq');
+        
         parent::__construct();
     }
 

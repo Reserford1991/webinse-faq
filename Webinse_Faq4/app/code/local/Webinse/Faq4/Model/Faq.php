@@ -27,7 +27,7 @@ class Webinse_Faq4_Model_Faq extends Mage_Core_Model_Abstract
         parent::_construct();
 
         // @todo: you must init model defined in the config.xml
-        $this->_init('your_model/entities');
+        $this->_init('faq4/faq');
     }
 
 }
